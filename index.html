@@ -3,132 +3,680 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Equality Frames</title>
+<title>Equality Frames – Premium Wallpapers & Photoshop Designs</title>
+<meta name="description" content="Cinematic AI Wallpapers and Premium Photoshop Designs. Download instantly. Made by Equality Frames.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-    margin:0;
-    font-family:Arial;
-    background:#0d1117;
-    color:white;
-    text-align:center;
+:root {
+  --bg: #080c10;
+  --surface: #0f1419;
+  --card: #141b23;
+  --accent: #c8a96e;
+  --accent2: #e8c98e;
+  --text: #f0ece4;
+  --muted: #7a8694;
+  --border: rgba(200,169,110,0.15);
+  --green: #238636;
 }
 
-header{
-    background:#161b22;
-    padding:25px;
-    font-size:35px;
-    font-weight:bold;
-    color:#58a6ff;
-    box-shadow:0 0 10px black;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
 }
 
-.hero{
-    padding:60px 20px;
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,12,16,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.hero h1{
-    font-size:50px;
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 1px;
 }
 
-.hero p{
-    color:#8b949e;
-    font-size:20px;
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 28px;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--text); }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px 70px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(200,169,110,0.07) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border);
 }
 
-.gallery{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-    padding:30px;
+.hero-badge {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 28px;
 }
 
-.card{
-    background:#161b22;
-    border-radius:15px;
-    overflow:hidden;
-    width:320px;
-    transition:0.3s;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 7vw, 78px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card:hover{
-    transform:scale(1.03);
+.hero p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
 }
 
-.card img{
-    width:100%;
-    height:400px;
-    object-fit:cover;
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
-.card h2{
-    margin:15px 0;
+.stat span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--accent);
 }
 
-button{
-    margin-bottom:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    background:#238636;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+.stat small {
+  font-size: 13px;
+  color: var(--muted);
 }
 
-button:hover{
-    background:#2ea043;
+/* SECTION */
+.section {
+  padding: 70px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-footer{
-    padding:25px;
-    background:#161b22;
-    color:#8b949e;
-    margin-top:30px;
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 8px;
 }
 
+.section-sub {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 48px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200,169,110,0.4);
+}
+
+.card-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(135deg, #1a2332, #0f1927);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: var(--muted);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.price small {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+.btn-buy {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #080c10;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-buy:hover { background: var(--accent2); transform: scale(1.03); }
+
+.btn-free {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-free:hover { background: rgba(200,169,110,0.1); }
+
+/* TRUST */
+.trust-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.trust-icon {
+  font-size: 20px;
+}
+
+/* REVIEWS */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.stars { color: var(--accent); font-size: 16px; margin-bottom: 10px; }
+
+.review-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.reviewer {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.modal-price {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 10px 0 20px;
+}
+
+.qr-box {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.qr-box img {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.upi-id {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.upi-val {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  user-select: all;
+}
+
+.upi-val:hover { border-color: var(--accent); }
+
+.modal-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-confirm {
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-confirm:hover { background: #2ea043; }
+
+/* FOOTER */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* COPY TOAST */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--accent);
+  color: #080c10;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s;
+  z-index: 9999;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 600px) {
+  header { padding: 16px 20px; }
+  nav { display: none; }
+  .section { padding: 50px 20px; }
+  .hero { padding: 70px 20px 50px; }
+  .trust-bar { gap: 28px; padding: 24px 20px; }
+}
 </style>
-
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-Equality Frames
+  <div class="logo">✦ Equality Frames</div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Cinematic AI Wallpapers</h1>
-<p>Premium Wallpapers & Photoshop Designs</p>
+  <div class="hero-badge">Premium Digital Art</div>
+  <h1>Cinematic Wallpapers<br>&amp; Photoshop Designs</h1>
+  <p>Handcrafted AI-powered designs for your screen, phone &amp; creative projects.</p>
+  <div class="hero-stats">
+    <div class="stat"><span>50+</span><small>Designs Available</small></div>
+    <div class="stat"><span>500+</span><small>Happy Customers</small></div>
+    <div class="stat"><span>4.9★</span><small>Average Rating</small></div>
+  </div>
 </section>
 
-<section class="gallery">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
-<h2>Nature Wallpaper</h2>
-<button>Download</button>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">⚡</span> Instant Download</div>
+  <div class="trust-item"><span class="trust-icon">🔒</span> Secure UPI Payment</div>
+  <div class="trust-item"><span class="trust-icon">🎨</span> High Resolution 4K</div>
+  <div class="trust-item"><span class="trust-icon">♾️</span> Lifetime Access</div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e">
-<h2>Mountain Art</h2>
-<button>Buy Premium</button>
-</div>
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <h2 class="section-title">Our Collection</h2>
+  <p class="section-sub">Click "Buy Now" to pay via UPI and get instant download link</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511300636408-a63a89df3482">
-<h2>Dark Cinematic</h2>
-<button>Download</button>
-</div>
+  <div class="gallery">
 
+    <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" alt="Nature Wallpaper">
+      <div class="card-body">
+        <div class="card-tag">Wallpaper Pack</div>
+        <div class="card-title">Nature Cinematic Series</div>
+        <div class="card-desc">10 premium 4K wallpapers — forests, mountains, mist. Perfect for desktop & mobile.</div>
+        <div class="card-footer">
+          <div class="price"><small>₹199</small>₹99</div>
+          <button class="btn-buy" onclick="openModal('Nature Cinematic Series', 99)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80" alt="Mountain Art">
+      <div class="card-body">
+        <div class="card-tag">Photoshop Pack</div>
+        <div class="card-title">Mountain Art Bundle</div>
+        <div class="card-desc">5 editable PSD files with cinematic mountain scenes. Fully layered & customizable.</div>
+        <div class="card-footer">
+          <div class="price"><small>₹349</small>₹149</div>
+          <button class="btn-buy" onclick="openModal('Mountain Art Bundle', 149)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1511300636408-a63a89df3482?w=600&q=80" alt="Dark Cinematic">
+      <div class="card-body">
+        <div class="card-tag">Wallpaper Pack</div>
+        <div class="card-title">Dark Cinematic Pack</div>
+        <div class="card-desc">8 ultra-dark atmospheric wallpapers. Moody, dramatic &amp; unique. 4K resolution.</div>
+        <div class="card-footer">
+          <div class="price"><small>₹149</small>₹79</div>
+          <button class="btn-buy" onclick="openModal('Dark Cinematic Pack', 79)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-placeholder">🌌</div>
+      <div class="card-body">
+        <div class="card-tag">Free Sample</div>
+        <div class="card-title">Try Before You Buy</div>
+        <div class="card-desc">Download 3 free wallpapers to experience the quality before purchasing any pack.</div>
+        <div class="card-footer">
+          <div class="price">FREE</div>
+          <button class="btn-free">Download Free</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-placeholder">🎭</div>
+      <div class="card-body">
+        <div class="card-tag">Mega Bundle</div>
+        <div class="card-title">Complete Bundle — All Packs</div>
+        <div class="card-desc">Get ALL packs + future updates. Best value — 25+ designs, 3 PSD files included.</div>
+        <div class="card-footer">
+          <div class="price"><small>₹699</small>₹299</div>
+          <button class="btn-buy" onclick="openModal('Complete Bundle — All Packs', 299)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-placeholder">✏️</div>
+      <div class="card-body">
+        <div class="card-tag">Custom Order</div>
+        <div class="card-title">Custom Design Request</div>
+        <div class="card-desc">Want a personalized wallpaper or Photoshop design? We'll make it just for you.</div>
+        <div class="card-footer">
+          <div class="price">₹199+</div>
+          <button class="btn-buy" onclick="openModal('Custom Design Request', 199)">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<footer>
-© 2026 Equality Frames
+<!-- REVIEWS -->
+<section class="section" id="reviews" style="background: var(--surface); max-width:100%; padding: 70px 40px;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-sub">Real reviews from real buyers</p>
+    <div class="reviews">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Absolutely stunning wallpapers! The dark cinematic pack is exactly what I needed. Instant download worked perfectly."</p>
+        <div class="reviewer">— Rahul M., Pune</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The PSD files are super clean and professional. Saved me hours of work. Will buy the bundle next time."</p>
+        <div class="reviewer">— Priya S., Mumbai</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">"Great quality and fast delivery. UPI payment was super easy. Highly recommend the nature pack!"</p>
+        <div class="reviewer">— Aditya K., Nagpur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">✦ Equality Frames</div>
+  <p style="margin-bottom:8px;">Premium Wallpapers &amp; Photoshop Designs</p>
+  <p>📧 equalityframes@gmail.com &nbsp;|&nbsp; Instagram: @equalityframes</p>
+  <p style="margin-top:16px;">© 2026 Equality Frames. All rights reserved.</p>
 </footer>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Complete Your Order</div>
+    <h2 id="modal-product">Product Name</h2>
+    <div class="modal-price" id="modal-price">₹99</div>
+
+    <div class="qr-box">
+      <!-- Replace this src with your actual UPI QR code image -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=YOUR-UPI-ID@upi&pn=EqualityFrames&am=99&cu=INR" id="qr-img" alt="UPI QR Code">
+    </div>
+
+    <div class="upi-id">Scan with any UPI app &amp; pay</div>
+    <div class="upi-val" onclick="copyUPI()" title="Click to copy">
+      yourname@upi ⎘
+    </div>
+
+    <p class="modal-note">
+      After payment, screenshot kara ani WhatsApp/email var patha — tumhala download link milel.<br>
+      📱 WhatsApp: <strong>+91 XXXXXXXXXX</strong>
+    </p>
+
+    <button class="btn-confirm" onclick="confirmPayment()">
+      ✓ I've Made the Payment — Send Download Link
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">UPI ID copied!</div>
+
+<script>
+function openModal(name, price) {
+  document.getElementById('modal-product').textContent = name;
+  document.getElementById('modal-price').textContent = '₹' + price;
+  const upi = 'yourname@upi';
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=${encodeURIComponent(upi)}%26pn=EqualityFrames%26am=${price}%26cu=INR`;
+  document.getElementById('qr-img').src = qrUrl;
+  document.getElementById('payModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('payModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function copyUPI() {
+  navigator.clipboard.writeText('yourname@upi').then(() => {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  });
+}
+
+function confirmPayment() {
+  const product = document.getElementById('modal-product').textContent;
+  const price = document.getElementById('modal-price').textContent;
+  const msg = encodeURIComponent(`Hi! Maine payment ki hai.\nProduct: ${product}\nAmount: ${price}\nPlease send download link. 🙏`);
+  window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`, '_blank');
+  closeModal();
+}
+
+document.getElementById('payModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
 
 </body>
 </html>
