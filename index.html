@@ -3,177 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equality Frames - Premium 4K Wallpapers</title>
-    
+    <title>Equality Frames | Premium & Free Wallpapers</title>
     <style>
+        /* Unsplash Style Minimal Light Theme */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, sans-serif;
         }
 
         body {
-            background-color: #0f0f12;
-            color: #ffffff;
-            padding: 20px;
+            background-color: #ffffff;
+            color: #111111;
+            padding: 0;
         }
 
+        /* Top Navigation Bar sarki डिझाईन */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #111111;
+        }
+
+        nav .subtitle {
+            font-size: 0.85rem;
+            color: #767676;
+            font-weight: 500;
+        }
+
+        /* Hero Header Section */
         header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
+            max-width: 1200px;
+            margin: 60px auto 40px auto;
+            padding: 0 20px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: #00ffcc;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         header p {
-            color: #aaa;
+            font-size: 1.1rem;
+            color: #555555;
+            max-width: 600px;
+            line-height: 1.6;
         }
 
-        .wallpaper-grid {
+        /* Unsplash style Mansory/Responsive Grid */
+        .unsplash-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px 60px 20px;
         }
 
-        .wallpaper-card {
-            background-color: #1a1a24;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .wallpaper-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-container {
+        /* Wallpaper Card Layout */
+        .photo-card {
             position: relative;
-            width: 100%;
-            height: 250px;
-            background-color: #222;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            transition: opacity 0.3s ease;
         }
 
-        .image-container img {
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        /* Photo वर माऊस नेल्यावर दिसणारा Overlay */
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            pointer-events: none;
+            background: rgba(0, 0, 0, 0.2); /* हलकी सावली */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .watermark {
+        /* Desktop वर Hover केल्यावरच बटन दिसेल, Unsplash सारखे */
+        .photo-card:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-tag {
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
+
+        /* Watermark फिकट पांढरा (फक्त दिसावा म्हणून) */
+        .light-watermark {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
-            transform: translate(-50%, -50%) rotate(-30deg);
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.15);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            white-space: nowrap;
+            transform: translate(-50%, -50%) rotate(-20deg);
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 700;
+            letter-spacing: 2px;
             pointer-events: none;
             user-select: none;
+            text-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
 
-        .card-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .card-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .card-info p {
-            color: #00ffcc;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .buy-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #00ffcc, #0099ff);
-            color: #000;
-            padding: 10px 20px;
-            border-radius: 25px;
+        /* Action Buttons Styling */
+        .action-btn {
+            align-self: flex-end;
+            padding: 10px 18px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
 
-        .buy-btn:hover {
-            background: linear-gradient(45deg, #0099ff, #00ffcc);
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        /* मोफत बटन (पांढरे) */
+        .btn-free {
+            background-color: #ffffff;
+            color: #767676;
+        }
+
+        .btn-free:hover {
+            color: #111111;
+            background-color: #f5f5f5;
+        }
+
+        /* पेड बटन (Unsplash Green/Premium Look) */
+        .btn-premium {
+            background-color: #3cb46e;
+            color: #ffffff;
+        }
+
+        .btn-premium:hover {
+            background-color: #359f62;
+        }
+
+        /* मोबाईल स्क्रीनसाठी बदल (मोबाईलवर बटन्स नेहमी दिसतील) */
+        @media (max-width: 768px) {
+            .photo-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+            }
+            nav {
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            color: #666;
-            font-size: 0.9rem;
+            padding: 40px 0;
+            border-top: 1px solid #eeeeee;
+            color: #767676;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">Equality Frames</div>
+        <div class="subtitle">Beautiful, Free & Premium Wallpapers</div>
+    </nav>
+
     <header>
         <h1>Equality Frames</h1>
-        <p>Premium & Exclusive 4K Wallpapers</p>
+        <p>उच्च दर्जाचे आणि निवडक ४K वॉलपेपर्स. आमचा पहिला वॉलपेपर तुमच्यासाठी पूर्णपणे मोफत आहे, तर पुढील प्रीमियम वॉलपेपर्स तुम्ही अगदी कमी किंमतीत खरेदी करू शकता.</p>
     </header>
 
-    <main class="wallpaper-grid">
+    <main class="unsplash-grid">
         
-        <div class="wallpaper-card">
-            <div class="image-container">
-                <img src="ChatGPT Image May 18, 2026, 12_30_46 PM.png" alt="Wallpaper 1">
-                <div class="watermark">Equality Frames</div>
-            </div>
-            <div class="card-info">
-                <h3>Cinematic Portrait - 4K</h3>
-                <p>किंमत: ₹49</p>
-                <a href="#" target="_blank" class="buy-btn">Buy 4K Version</a>
+        <div class="photo-card">
+            <img src="ChatGPT Image May 18, 2026, 12_30_46 PM.png" alt="Free Wallpaper">
+            <div class="photo-overlay">
+                <span class="photo-tag">Free Stock</span>
+                <a href="ChatGPT Image May 18, 2026, 12_30_46 PM.png" download class="action-btn btn-free">Download Free</a>
             </div>
         </div>
 
-        <div class="wallpaper-card">
-            <div class="image-container">
-                <img src="ChatGPT Image May 21, 2026, 01_01_08 PM.png" alt="Wallpaper 2">
-                <div class="watermark">Equality Frames</div>
-            </div>
-            <div class="card-info">
-                <h3>Premium Wallpaper 2</h3>
-                <p>किंमत: ₹49</p>
-                <a href="#" target="_blank" class="buy-btn">Buy 4K Version</a>
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 01_01_08 PM.png" alt="Premium Wallpaper 1">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
             </div>
         </div>
 
-        <div class="wallpaper-card">
-            <div class="image-container">
-                <img src="ChatGPT Image May 21, 2026, 12_44_28 PM.png" alt="Wallpaper 3">
-                <div class="watermark">Equality Frames</div>
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 12_44_28 PM.png" alt="Premium Wallpaper 2">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
             </div>
-            <div class="card-info">
-                <h3>Premium Wallpaper 3</h3>
-                <p>किंमत: ₹49</p>
-                <a href="#" target="_blank" class="buy-btn">Buy 4K Version</a>
+        </div>
+
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 12_47_18 PM.png" alt="Premium Wallpaper 3">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 12_52_10 PM.png" alt="Premium Wallpaper 4">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 12_57_25 PM (1).png" alt="Premium Wallpaper 5">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="ChatGPT Image May 21, 2026, 12_57_26 PM (2).png" alt="Premium Wallpaper 6">
+            <div class="light-watermark">Equality Frames</div>
+            <div class="photo-overlay">
+                <span class="photo-tag">Premium Edition • ₹49</span>
+                <a href="#" target="_blank" class="action-btn btn-premium">Buy 4K version</a>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Equality Frames. All Rights Reserved.</p>
+        <p>&copy; 2026 Equality Frames. Designed with a clean minimalist aesthetic.</p>
     </footer>
 
 </body>
